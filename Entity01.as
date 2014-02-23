@@ -78,13 +78,16 @@ package
 			}
 			 
 		}
-		//explosie + verwijdering van het vlak
-		//TODO: muziekje + "GAME OVER"
+		//explosie + verwijdering van het vlak+muziekje
+		//TODO: "GAME OVER"
 		private function die():void {
 			Assets.EMITTER.explosion(x, y);
 			if (lives <1) {
 				FP.world.recycle(this);
 				Level01.theme_village.stop();
+				FP.volume = 1;
+				World01.gameOver.play();
+				
 			}
 		}
 	

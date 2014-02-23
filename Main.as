@@ -16,6 +16,7 @@ package
 			FP.world = new World01;
 			trace("Debugger started correctly");
 			FP.console.enable();
+			FP.volume = 0.5;
 		}
 		
 	}

@@ -1,7 +1,9 @@
 package  
 {
 	import flash.display.SimpleButton;
+	import flash.media.Sound;
 	import net.flashpunk.debug.Console;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	/**
 	 * ...
@@ -9,6 +11,7 @@ package
 	 */
 	public class World01 extends World
 	{
+		public static var gameOver:Sfx = new Sfx(Assets.GAMEOVER);
 		public function World01() 
 		{
 			add(new Entity01());
