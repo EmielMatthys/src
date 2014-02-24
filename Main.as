@@ -13,10 +13,11 @@ package
 		public function Main() 
 		{
 			super(608, 608, 60, false);
-			FP.world = new World01;
+			FP.world = new mainMenu;
 			trace("Debugger started correctly");
 			FP.console.enable();
 			FP.volume = 0.5;
+			
 		}
 		
 	}

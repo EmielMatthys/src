@@ -5,6 +5,8 @@ package
 	import net.flashpunk.debug.Console;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
+	import net.flashpunk.FP;
+
 	/**
 	 * ...
 	 * @author Emiel Matthys
