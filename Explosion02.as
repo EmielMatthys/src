@@ -20,6 +20,7 @@ package
 			_emitter.setMotion("explosion", 0, 0, 1, 360, 0, 1, null);
 			_emitter.setAlpha("explosion", 1, 0.1);
 			graphic = _emitter
+			layer = 1;
 		}
 		public function explosion(_x:Number, _y:Number, particles:int = 1):void 
 		{

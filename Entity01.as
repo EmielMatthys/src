@@ -27,7 +27,7 @@ package
 			super(240, 300);
 			setHitbox(32, 32, 0, 0);
 			graphic = image;
-			
+			layer = 2;
 		}
 		
 		override public function update():void 
@@ -87,6 +87,7 @@ package
 				Level01.theme_village.stop();
 				FP.volume = 1;
 				World01.gameOver.play();
+				FP.world = new gameOver();
 				
 			}
 		}

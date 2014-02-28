@@ -18,7 +18,7 @@ package
 			theme_village.loop();
 			_tilemap = new Tilemap(Assets.TILEMAP, 608, 608, 32, 32);
 			graphic = _tilemap;
-			layer = 1;
+			layer = 3;
 			
 			_tilemap.setRect(0, 0, 608 / 32, 608 / 32, 0); 
 			_tilemap.setRect(0, 0, 608 / 32 , 1, 1);
