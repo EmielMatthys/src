@@ -25,7 +25,7 @@ package
             add(splashEntity);
 			Assets.EMITTER = new Explosion02;
 			add(Assets.EMITTER);
-			randomExplosions();
+			//randomExplosions();
 			
 			
         }
@@ -35,15 +35,16 @@ package
 				Assets.EMITTER.explosion(FP.rand(600), FP.rand(600));
 			}
 		}
-		var counter:int = 0;
+		private var counter:int = 0;
         override public function update():void {
             super.update()
 			if (Input.pressed(Key.G)) {
                 FP.world=new World01();
             }
 			counter++;
-			if (counter = 20) {
+			if (counter == 10) {
 				randomExplosions();
+				
 				counter = 0;
 			}
 			
