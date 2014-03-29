@@ -25,7 +25,7 @@ package
 			_tilemap.setRect(0, 608 / 32 -2, 608 / 32, 2, 1);
 			_tilemap.setRect(0, 5, 2, 608 / 32 - 5, 1);
 			_tilemap.setRect(0, 1, 3, 5, 4);
-			_tilemap.setRect(5, 13, 4, 3, 5);
+			_tilemap.setRect(5, 13, 3, 3, 5);
 			_tilemap.setRect(4, 13, 1, 4, 2);
 			_tilemap.setRect(5, 16, 4, 1, 2);
 			

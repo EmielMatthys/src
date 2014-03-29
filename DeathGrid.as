@@ -19,7 +19,7 @@ package
 			layer = 1;
 			_grid = new Grid(608, 608, 32, 32, 0, 0);
 			mask = _grid;
-			_grid.setRect(5, 13, 4, 3, true);
+			_grid.setRect(5, 13, 3, 3, true);
 			type = "death";
 		}
 		
