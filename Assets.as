@@ -16,6 +16,8 @@ package
 		[Embed(source = "assets/bullet.png")] public static const BULLET:Class;
 		[Embed(source = "assets/HealthBarFull.png")]public static const HPFULL:Class;
 		[Embed(source = "assets/HealthBarEmpty.png")]public static const HPEMPTY:Class;
+		[Embed(source = "assets/hitsound.mp3")]public static const SOUND1:Class;
+		[Embed(source = "assets/melon.mp3")]public static const SOUND2:Class;
 		
 		public static var EMITTER:Explosion02;
 		

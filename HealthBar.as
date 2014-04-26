@@ -15,7 +15,7 @@ package
 	public class HealthBar extends Entity 
 	{
 		private var _full:Image = new Image(Assets.HPFULL);
-		private var _empty = new Image(Assets.HPEMPTY);
+		private var _empty:Image = new Image(Assets.HPEMPTY);
 		public function HealthBar() 
 		{
 		

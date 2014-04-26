@@ -62,7 +62,6 @@ package
 			if (y < 0) y = 0;
 			if (y > FP.height - 32) y = FP.height - 32;	
 		
-		
 		}
 		
 		private function updatecollision():void
@@ -91,18 +90,22 @@ package
 			}
 			 
 		}
+		private function deadBody(_xPos:int, _yPos:int ):void {
+			
+			
+			
+		}
 		
 		private function die():void {
 			Assets.EMITTER.explosion(x, y);
-			if (lives <1) {
-				image.angle = 180;
+			if (lives >60) {
 				alive = false;
-				//FP.world.recycle(this);
+				deadBody(x, y);
+				FP.world.recycle(this);
 				Level01.theme_village.stop();
 				FP.volume = 1;
 				World01.gameOver.play();
 				//FP.world = new gameOver();
-				
 				lives = 60;
 			}
 		}

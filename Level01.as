@@ -4,6 +4,7 @@ package
 	import net.flashpunk.graphics.Tilemap;
 	import net.flashpunk.masks.Grid;
 	import net.flashpunk.Sfx;
+	import net.flashpunk.FP;
 	/**
 	 * ...
 	 * @author Emiel Matthys
@@ -12,10 +13,12 @@ package
 	{
 		private var _tilemap:Tilemap;
 		private var _grid:Grid;
-		public static var theme_village:Sfx = new Sfx(Assets.THEME_FOREST);
+		public static var theme_village:Sfx = new Sfx(Assets.THEME_FOREST);//theme village = theme forest
 		public function Level01() 
 		{
+			
 			theme_village.loop();
+			
 			_tilemap = new Tilemap(Assets.TILEMAP, 608, 608, 32, 32);
 			graphic = _tilemap;
 			layer = 3;
