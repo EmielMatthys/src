@@ -7,7 +7,25 @@ package
     import net.flashpunk.utils.Key;
     import net.flashpunk.graphics.Text;
     public class mainMenu extends World {
-        public function mainMenu() {
+        private var normalText:Text = new Text("Press [1] for normal");
+		private var hardText:Text = new Text("Press [2] for hard");
+		public function mainMenu() {
+			
+			
+			normalText.color = 0xFFFF33;
+            var normalEntity:Entity = new Entity(0,0,normalText);
+            normalEntity.x = (FP.width/2)-(normalText.width/2) - 100;
+            normalEntity.y = (FP.height / 2) - (normalText.height / 2) - 100;
+			normalEntity.layer = 0;
+            add(normalEntity);
+			
+			
+			hardText.color = 0xFFFFFF;
+            var hardEntity:Entity = new Entity(0,0,hardText);
+            hardEntity.x = (FP.width/2)-(hardText.width/2) + 100;
+            hardEntity.y = (FP.height / 2) - (hardText.height / 2) - 100;
+			hardEntity.layer = 0;
+            add(hardEntity);
 			
             var titleText:Text = new Text("Press [G] to Start");
             var textEntity:Entity = new Entity(0,0,titleText);
@@ -47,7 +65,16 @@ package
 				
 				counter = 0;
 			}
-			
+			if (Input.pressed(Key.DIGIT_1)) {
+                normalText.color = 0xFFFF33;
+				hardText.color = 0xFFFFFF;
+				Enemy01.difficulty = 5;
+            }
+			if (Input.pressed(Key.DIGIT_2)) {
+                normalText.color = 0xFFFFFF;
+				hardText.color = 0xFFFF33;
+				Enemy01.difficulty = 10;
+            }
         }
     }
 }

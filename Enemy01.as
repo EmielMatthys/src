@@ -9,6 +9,7 @@ import net.flashpunk.FP;
 	public class Enemy01 extends Entity
 	{	private var killed:Boolean = false;
 		private var shootdelay:Number;
+		public static var difficulty:int = 3;
 		
 		private var _image:Image;
 		public function Enemy01() 
@@ -29,7 +30,7 @@ import net.flashpunk.FP;
 						newBullet.y = 130;
 						newBullet.setMovement(-FP.rand(800), FP.rand(608));
 						FP.world.add(newBullet);
-						shootdelay = 1 / 5;
+						shootdelay = 1 / difficulty;
 					}	
 			}
 		
