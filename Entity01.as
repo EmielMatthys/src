@@ -26,16 +26,20 @@ package
 		public static var _y:int;
 		private var alive:Boolean;
 		public static const normalLive:Number = 60;//public accessible const "amount of life"
+		public static var _healtBar:HealthBar;
+		private var _full:Image = new Image(Assets.HPEMPTY);
+		private var booleanForHealthBar:Boolean = true;
 		
 		public function Entity01() 
 		{
 			image = new Image (Assets.PLAYER);
-			super(100, 70);
+			super(100, 70); 
 			setHitbox(32, 32, 0, 0);
 			graphic = image;
 			layer = 2;
 			type = "player";
 			alive = true;
+			_healtBar = new HealthBar();
 		}
 		
 		override public function update():void 
@@ -53,9 +57,14 @@ package
 			if (Input.released(Key.RIGHT)) 	{xSpeed = 0;}
 			if (Input.released(Key.UP))  	{ySpeed = 0;}
 			if (Input.released(Key.DOWN)) 	{ySpeed = 0;}
-			if (Input.released(Key.LEFT)) 	{xSpeed = 0;}
+			if (Input.released(Key.LEFT)) 	{ xSpeed = 0; }
 		
 		}
+		
+		//spawns hpbar in a weird, probably more difficult way than needed
+		if (booleanForHealthBar) { FP.world.add(_healtBar); booleanForHealthBar = false; }
+		
+		
 		//limitatie van bewegingsvrijheid in het vlak
 			if (x < 0) x = 0;
 			if (x > FP.width - 32) x = FP.width - 32;
@@ -98,12 +107,14 @@ package
 		
 		private function die():void {
 			Assets.EMITTER.explosion(x, y);
-			if (lives >60) {
+			if (lives <1) {
 				alive = false;
 				deadBody(x, y);
 				FP.world.recycle(this);
+				_healtBar.destroy();
 				Level01.theme_village.stop();
-				FP.volume = 1;
+				//FP.volume = 1;
+				World01.gameOver.volume = 1;
 				World01.gameOver.play();
 				//FP.world = new gameOver();
 				lives = 60;

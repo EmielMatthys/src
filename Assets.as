@@ -18,6 +18,9 @@ package
 		[Embed(source = "assets/HealthBarEmpty.png")]public static const HPEMPTY:Class;
 		[Embed(source = "assets/hitsound.mp3")]public static const SOUND1:Class;
 		[Embed(source = "assets/melon.mp3")]public static const SOUND2:Class;
+		[Embed(source = "assets/HealthBar1.png")]public static const HPBAR1:Class;
+		[Embed(source = "assets/HealthBar2.png")]public static const HPBAR2:Class;
+		[Embed(source = "assets/yu-gi-oh-back-and-cage.png")]public static const DEATHWALL:Class;
 		
 		public static var EMITTER:Explosion02;
 		

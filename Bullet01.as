@@ -16,7 +16,9 @@ package
 		private var moveX:Number = 0
 		private var moveY:Number = 0
 		private var _song1:Sfx = new Sfx(Assets.SOUND1);
+		
 		private var _song2:Sfx = new Sfx(Assets.SOUND2);
+		
 		
 			
 			public function setMovement(_x:Number = 0, _y:Number = 0):void
@@ -49,10 +51,13 @@ package
 			
 			public function sound(_number:Number):void 
 			{
+				
 				if (_number == 0) {
 					_song1.play();
+					_song1.volume = 5;
 				} else if (_number == 1) {
 					_song2.play();
+					_song2.volume = 5;
 				}else{}
 				
 			}
