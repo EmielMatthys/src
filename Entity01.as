@@ -29,6 +29,7 @@ package
 		public static var _healtBar:HealthBar;
 		private var _full:Image = new Image(Assets.HPEMPTY);
 		private var booleanForHealthBar:Boolean = true;
+		private const cage:CageAnim = new CageAnim();
 		
 		public function Entity01() 
 		{
@@ -44,6 +45,7 @@ package
 		
 		override public function update():void 
 		{ 
+			trace(lives);
 		updatecollision();
 		_x = x;
 		_y = y;
@@ -97,19 +99,23 @@ package
 				lives -= normalLive / 4;
 				die();
 			}
-			 
+			if (collide("Pills", x, y)) 
+			{
+					lives = lives + 15
+			}
+			
 		}
-		private function deadBody(_xPos:int, _yPos:int ):void {
+		/*private function deadBody(_xPos:int, _yPos:int ):void {
 			
 			
 			
-		}
+		}*/
 		
 		private function die():void {
 			Assets.EMITTER.explosion(x, y);
 			if (lives <1) {
 				alive = false;
-				deadBody(x, y);
+				//deadBody(x, y);
 				FP.world.recycle(this);
 				_healtBar.destroy();
 				Level01.theme_village.stop();
@@ -118,6 +124,9 @@ package
 				World01.gameOver.play();
 				//FP.world = new gameOver();
 				lives = 60;
+				Level01.gabenSong.loop();
+				Level01.gabenSong.volume = 10;
+				FP.world.add(cage);
 			}
 		}
 		

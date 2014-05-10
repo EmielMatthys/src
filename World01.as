@@ -23,9 +23,10 @@ package
 			add(new Level01());
 			Assets.EMITTER = new Explosion02;
 			add(Assets.EMITTER);
-			add(new DeathGrid());
+			//add(new DeathGrid());
 			add(new Enemy01());
 			//add(new HealthBar());
+			add(new Pills01);
 			
 		
 		}

@@ -21,6 +21,9 @@ package
 		[Embed(source = "assets/HealthBar1.png")]public static const HPBAR1:Class;
 		[Embed(source = "assets/HealthBar2.png")]public static const HPBAR2:Class;
 		[Embed(source = "assets/yu-gi-oh-back-and-cage.png")]public static const DEATHWALL:Class;
+		[Embed(source = "assets/cageAnim.png")]public static const CAGE:Class; 
+		[Embed(source = "assets/gaben.mp3")]public static const GABEN:Class;
+		[Embed(source = "assets/pillshere.png")] public static const PILLS:Class;
 		
 		public static var EMITTER:Explosion02;
 		

@@ -15,7 +15,7 @@ package
 			super(608, 608, 60, false);
 			FP.world = new mainMenu;
 			trace("Debugger started correctly");
-			FP.console.enable();
+			//FP.console.enable();
 			FP.volume = 0.5;
 			
 		}
