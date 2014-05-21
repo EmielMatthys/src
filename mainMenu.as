@@ -46,6 +46,7 @@ package
 			//randomExplosions();
 			
 			
+			
         }
 		private function randomExplosions():void 
 		{
@@ -74,6 +75,7 @@ package
                 normalText.color = 0xFFFFFF;
 				hardText.color = 0xFFFF33;
 				Enemy01.difficulty = 10;
+				Entity01.lives = 100;
             }
         }
     }

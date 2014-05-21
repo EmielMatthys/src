@@ -54,10 +54,10 @@ package
 				
 				if (_number == 0) {
 					_song1.play();
-					_song1.volume = 5;
+					_song1.volume = 2;
 				} else if (_number == 1) {
 					_song2.play();
-					_song2.volume = 5;
+					_song2.volume = 2;
 				}else{}
 				
 			}

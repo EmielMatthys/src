@@ -9,12 +9,14 @@ package
 	 */
 	public class Pills01 extends Entity
 	{	private var image:Image;
-		
+		private var _x:Number = 460;
+		private var _yRand:Number = 350;
+		private var _yOffset:Number = 70;
 		
 		public function Pills01() 
 		{
-			x = FP.rand(500);
-			y = FP.rand(450-100) + 70;
+			x = FP.rand(_x);
+			y = FP.rand(_yRand) + _yOffset;
 			image = new Image(Assets.PILLS);
 			graphic = image;
 			super(x, y);
@@ -25,8 +27,8 @@ package
 			{
 				if (collide("player", x, y))
 				{
-					x = FP.rand(500);
-					y = FP.rand(450-100) + 70;
+					x = FP.rand(_x);
+					y = FP.rand(_yRand) + _yOffset;
 					
 				}
 			}

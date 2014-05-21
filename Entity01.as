@@ -26,10 +26,12 @@ package
 		public static var _y:int;
 		private var alive:Boolean;
 		public static const normalLive:Number = 60;//public accessible const "amount of life"
-		public static var _healtBar:HealthBar;
-		private var _full:Image = new Image(Assets.HPEMPTY);
+		//public static var _healtBar:HealthBar;
 		private var booleanForHealthBar:Boolean = true;
 		private const cage:CageAnim = new CageAnim();
+		private var hp2:healthBar2 = new healthBar2();
+		private var OP:Boolean = false;private var OP2:Boolean = false;
+		private var OPImage:Image = new Image(Assets.OPPLAYER);
 		
 		public function Entity01() 
 		{
@@ -40,12 +42,18 @@ package
 			layer = 2;
 			type = "player";
 			alive = true;
-			_healtBar = new HealthBar();
+			//_healtBar = new HealthBar();
+			//FP.world.add(hp2);
+			
 		}
-		
+		private function startOP():void 
+		{
+			lives = 9999; graphic = OPImage; Level01.theme_village.stop(); Level01.theme_OP.loop();
+		}
 		override public function update():void 
 		{ 
-			trace(lives);
+			trace(OP);
+			//trace(lives);
 		updatecollision();
 		_x = x;
 		_y = y;
@@ -60,11 +68,14 @@ package
 			if (Input.released(Key.UP))  	{ySpeed = 0;}
 			if (Input.released(Key.DOWN)) 	{ySpeed = 0;}
 			if (Input.released(Key.LEFT)) 	{ xSpeed = 0; }
+			if (Input.check(Key.O) && Input.check(Key.P)) { OP = true; OP2 = true; }
+			if (!OP && lives > 200) { lives = 200; } 
+			if (OP2) { startOP(); OP2 = false; }
 		
 		}
 		
 		//spawns hpbar in a weird, probably more difficult way than needed
-		if (booleanForHealthBar) { FP.world.add(_healtBar); booleanForHealthBar = false; }
+		if (booleanForHealthBar) { /*FP.world.add(_healtBar);*/ booleanForHealthBar = false; FP.world.add(hp2); }	
 		
 		
 		//limitatie van bewegingsvrijheid in het vlak
@@ -101,7 +112,8 @@ package
 			}
 			if (collide("Pills", x, y)) 
 			{
-					lives = lives + 15
+					lives = lives + 20;
+					World01._scoreInt++;
 			}
 			
 		}
@@ -117,7 +129,7 @@ package
 				alive = false;
 				//deadBody(x, y);
 				FP.world.recycle(this);
-				_healtBar.destroy();
+				//_healtBar.destroy();
 				Level01.theme_village.stop();
 				//FP.volume = 1;
 				World01.gameOver.volume = 1;
@@ -125,8 +137,10 @@ package
 				//FP.world = new gameOver();
 				lives = 60;
 				Level01.gabenSong.loop();
-				Level01.gabenSong.volume = 10;
+				Level01.theme_OP.stop();
+				Level01.gabenSong.volume = 5;
 				FP.world.add(cage);
+				hp2.destroy();
 			}
 		}
 		

@@ -24,6 +24,8 @@ package
 		[Embed(source = "assets/cageAnim.png")]public static const CAGE:Class; 
 		[Embed(source = "assets/gaben.mp3")]public static const GABEN:Class;
 		[Embed(source = "assets/pillshere.png")] public static const PILLS:Class;
+		[Embed(source = "assets/playerOP.gif")] public static const OPPLAYER:Class;
+		[Embed(source = "assets/OPSong.mp3")] public static const OPSONG:Class;
 		
 		public static var EMITTER:Explosion02;
 		

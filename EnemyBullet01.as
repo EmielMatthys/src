@@ -17,7 +17,23 @@ package
 			graphic = _sprites;
 			type = "EnemyBullet";
 			setHitbox(29, 29);
+			layer = 1;
 		}
+		override public function update():void 
+		{
+			super.update();
+			
+			
+			if (collide("player", x, y)) 
+				{
+					sound(FP.choose(0, 1));
+					destroy2();
+				}
+		}
+		public function destroy2():void
+			{
+				FP.world.recycle(this);
+			}
 		
 	}
 

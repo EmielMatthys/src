@@ -29,18 +29,16 @@ package
 		}
 		override public function update():void {
 			super.update();
-			//if (Input.check(Key.A)) { graphic = _empty; }
-			//if (Input.check(Key.Q)) { graphic = _full;}
 			x = Entity01._x - 10;
 			y = Entity01._y - 10;
 			if (Entity01.lives < Entity01.normalLive) {
 				if (Entity01.lives < 10) { graphic = _empty; }
 				else if (Entity01.lives > 9 && Entity01.lives < 30) { graphic = _hp1 }
-				else if (Entity01.lives > 29 && Entity01.lives < 50) {graphic = _hp2 }
-				else if (Entity01.lives > 49) { graphic = _full; }
+				else if (Entity01.lives > 29 && Entity01.lives < 150) {graphic = _hp2 }
+				else if (Entity01.lives > 149) { graphic = _full; }
 				
 			}
-			trace(Entity01.lives);
+			//trace(Entity01.lives);
 			
 		}
 		public function destroy():void

@@ -29,6 +29,7 @@ package
 					Level01.gabenSong.stop();
 					FP.world.removeAll();
 					FP.world = new World01();
+					World01._scoreInt = 0;
 				}
 			}
 		}

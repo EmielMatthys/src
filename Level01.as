@@ -15,6 +15,7 @@ package
 		private var _grid:Grid;
 		public static var theme_village:Sfx = new Sfx(Assets.THEME_FOREST);//theme village = theme forest
 		public static const gabenSong:Sfx = new Sfx(Assets.GABEN);
+		public static var theme_OP:Sfx = new Sfx(Assets.OPSONG);
 		public function Level01() 
 		{
 			
@@ -46,6 +47,7 @@ package
 			_grid.setRect(0, 16, 25, 5, true);
 			_grid.setRect(0, 0, 800 / 32, 2, true);
 			type = "level";
+			//layer = 1;
 			
 		}
 		
